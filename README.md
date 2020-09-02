@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## foods テーブル
+
+| Column      | Type    | Options     |
+|-------------|---------|-------------|
+| name        | string  | null: false |
+| protein     | integer | null: false |
+| fat         | integer | null: false |
+| carbo       | integer | null: false |
+| kcal        | integer |             |
+| category_id | integer | null: false |
+
+### Association
+
+- has_one_attached
