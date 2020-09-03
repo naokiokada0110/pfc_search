@@ -1,11 +1,13 @@
 <h1>食材新規登録</h1>
 <%= form_with model:@food, url:foods_path, local: true do |f| %>
+  <%= f.file_field :image%>
   <%= f.text_area :name, placeholder:"食材名（必須）" %>
   <%= f.text_area :protein, placeholder:"タンパク質（必須）" %>
   <%= f.text_area :fat, placeholder:"脂質（必須）" %>
   <%= f.text_area :carbo, placeholder:"炭水化物（必須）" %>
   <%= f.text_area :kcal, placeholder:"カロリー" %>
-  <%= f.collection_select(:category_id, CategoryId.all, :id, :name, {include_blank: "---"}) %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "---"}) %>
 
   <%= f.submit "登録する"%>
 <% end %>
+<%= link_to "トップページへ戻る", root_path %>
