@@ -18,6 +18,7 @@
 <% end %>
 
 <h2>食材一覧</h2>
+<h4>*食材100gあたりのPFCとなります。<h4>
 <% @food.each do |food| %>
   <td>
   <br>
@@ -26,5 +27,6 @@
     <%= food.protein %>g
     <%= food.fat %>g
     <%= food.carbo %>g
+    <%= food.kcal %>kcal
   </li>
   <% end %>
