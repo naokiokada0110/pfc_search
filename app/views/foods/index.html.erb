@@ -1,5 +1,5 @@
 <h1>食材検索</h1>
-<%= link_to '登録','#'%>
+<%= link_to '登録', new_food_path %>
 <%= search_form_for @f, url: foods_search_path do |f| %>
   <%= f.label :name, "キーワード" %>
   <%= f.search_field :name_cont %>
@@ -18,13 +18,16 @@
 <% end %>
 
 <h2>食材一覧</h2>
+<h4>*食材100gあたりのPFCとなります。<h4>
 <% @food.each do |food| %>
   <td>
   <br>
   <li>
+    <%= image_tag food.image %>
     <%= food.name %>
     <%= food.protein %>g
     <%= food.fat %>g
     <%= food.carbo %>g
+    <%= food.kcal %>kcal
   </li>
   <% end %>

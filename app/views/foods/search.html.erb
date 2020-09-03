@@ -1,13 +1,16 @@
 <h1>検索商品一覧</h1>
+<h4>*食材100gあたりのPFCとなります。<h4>
 <% if @results.length !=0 %>
   <% @results.each do |result| %>
     <td>
     <br>
     <li>
+      <%= image_tag result.image %>
       <%= result.name %>
       <%= result.protein %>g
       <%= result.fat %>g
       <%= result.carbo %>g
+      <%= result.kcal %>kcal
     </li>
   <% end %>
 <% else %>

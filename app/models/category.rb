@@ -1,4 +1,4 @@
-class CategoryId < ActiveHash::Base
+class Category < ActiveHash::Base
   self.data = [
     { id: 1, name: '牛肉' },
     { id: 2, name: '豚肉' },
