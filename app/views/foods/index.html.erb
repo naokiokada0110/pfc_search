@@ -1,0 +1,30 @@
+<h1>食材検索</h1>
+<%= link_to '登録','#'%>
+<%= search_form_for @f, url: foods_search_path do |f| %>
+  <%= f.label :name, "キーワード" %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.radio_button :category_id_eq, '', {:checked => true} %>指定なし
+  <%= f.radio_button :category_id_eq, 1 %>牛肉
+  <%= f.radio_button :category_id_eq, 2 %>豚肉
+  <%= f.radio_button :category_id_eq, 3 %>鶏肉
+  <%= f.radio_button :category_id_eq, 4 %>その他（肉）
+  <%= f.radio_button :category_id_eq, 5 %>魚介
+  <%= f.radio_button :category_id_eq, 6 %>卵
+  <%= f.radio_button :category_id_eq, 7 %>大豆製品
+  <%= f.radio_button :category_id_eq, 8 %>乳製品
+  <%= f.radio_button :category_id_eq, 9 %>その他
+  <%= f.submit "検索" %>
+<% end %>
+
+<h2>食材一覧</h2>
+<% @food.each do |food| %>
+  <td>
+  <br>
+  <li>
+    <%= food.name %>
+    <%= food.protein %>g
+    <%= food.fat %>g
+    <%= food.carbo %>g
+  </li>
+  <% end %>
