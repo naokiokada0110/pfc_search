@@ -1,19 +1,33 @@
-<h1>検索商品一覧</h1>
-<h4>*食材100gあたりのPFCとなります。<h4>
-<% if @results.length !=0 %>
-  <% @results.each do |result| %>
-    <td>
-    <br>
-    <li>
-      <%= image_tag result.image %>
-      <%= result.name %>
-      <%= result.protein %>g
-      <%= result.fat %>g
-      <%= result.carbo %>g
-      <%= result.kcal %>kcal
-    </li>
+<h1 class='sub-title'>検索商品一覧</h1>
+<h4 class= 'mini-title'>*食材100gあたりのPFCとなります。<h4>
+<div class='food-info'>
+  <% if @results.length !=0 %>
+    <% @results.each do |result| %>
+      <td>
+      <br>
+      <li class='list'>
+        <div class='food-imag-content'>
+          <%= image_tag result.image, class: "food-image" %>
+        </div>
+        <div class='food-name-content'>
+          <%= result.name %>
+        </div>
+        <div class='food-protein-content'>
+          <%= result.protein %>g
+        </div>
+        <div class='food-fat-content'>
+          <%= result.fat %>g
+        </div>
+        <div class='food-carbo-content'>
+          <%= result.carbo %>g
+        </div>
+          <div class='food-kcal-content'>
+        <%= result.kcal %>kcal
+        </div>
+      </li>
+    <% end %>
+  <% else %>
+    該当する商品はありません
   <% end %>
-<% else %>
-  該当する商品はありません
-<% end %>
+</div>
 <%= link_to 'トップページへ', root_path %>

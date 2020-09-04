@@ -1,33 +1,58 @@
-<h1>食材検索</h1>
-<%= link_to '登録', new_food_path %>
-<%= search_form_for @f, url: foods_search_path do |f| %>
-  <%= f.label :name, "キーワード" %>
-  <%= f.search_field :name_cont %>
+<header>
+  <h1 class='main-title'>PFCShearch</h1>
+  <%= link_to '食材登録', new_food_path, class: "register" %>
+</header>
 
-  <%= f.radio_button :category_id_eq, '', {:checked => true} %>指定なし
-  <%= f.radio_button :category_id_eq, 1 %>牛肉
-  <%= f.radio_button :category_id_eq, 2 %>豚肉
-  <%= f.radio_button :category_id_eq, 3 %>鶏肉
-  <%= f.radio_button :category_id_eq, 4 %>その他（肉）
-  <%= f.radio_button :category_id_eq, 5 %>魚介
-  <%= f.radio_button :category_id_eq, 6 %>卵
-  <%= f.radio_button :category_id_eq, 7 %>大豆製品
-  <%= f.radio_button :category_id_eq, 8 %>乳製品
-  <%= f.radio_button :category_id_eq, 9 %>その他
-  <%= f.submit "検索" %>
-<% end %>
+<div class='main'>
+  <div class='search'>
+    <h2 class=sub-title>食材検索</h2>
+    <%= search_form_for @f, url: foods_search_path do |f| %>
+      <%= f.label :name, "キーワード" %>
+      <%= f.search_field :name_cont %>
+      <br>
+      <%= f.radio_button :category_id_eq, '', {:checked => true} %>指定なし
+      <%= f.radio_button :category_id_eq, 1 %>牛肉
+      <%= f.radio_button :category_id_eq, 2 %>豚肉
+      <%= f.radio_button :category_id_eq, 3 %>鶏肉
+      <%= f.radio_button :category_id_eq, 4 %>その他（肉）
+      <%= f.radio_button :category_id_eq, 5 %>魚介
+      <%= f.radio_button :category_id_eq, 6 %>卵
+      <%= f.radio_button :category_id_eq, 7 %>大豆製品
+      <%= f.radio_button :category_id_eq, 8 %>乳製品
+      <%= f.radio_button :category_id_eq, 9 %>その他
+      <br>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
 
-<h2>食材一覧</h2>
-<h4>*食材100gあたりのPFCとなります。<h4>
-<% @food.each do |food| %>
-  <td>
-  <br>
-  <li>
-    <%= image_tag food.image %>
-    <%= food.name %>
-    <%= food.protein %>g
-    <%= food.fat %>g
-    <%= food.carbo %>g
-    <%= food.kcal %>kcal
-  </li>
-  <% end %>
+  <div class='info'>
+    <h2 class='subtitle'>〜〜〜食材一覧〜〜〜</h2>
+    <h4 class='mini-title'>*食材100gあたりのPFCとなります。<h4>
+    <div class='food-info'>
+      <% @food.each do |food| %>
+        <td>
+        <br>
+        <li class='list'>
+          <div class='food-image-content'>
+            <%= image_tag food.image, class: "food-image" %>
+          </div>
+          <div class='food-name-content'>
+            <%= food.name %>
+          </div>
+          <div class='food-protein-content'>
+            タンパク質 <%= food.protein %>g
+          </div>
+          <div class='food-fat-content'>
+            脂質  <%= food.fat %>g
+          </div>
+          <div class='food-carbo-content'>
+            炭水化物  <%= food.carbo %>g
+          </div>
+          <div class='food-kcal-content'>
+            カロリー  <%= food.kcal %>kcal
+          </div>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</div>
