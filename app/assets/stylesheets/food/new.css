@@ -1,1 +1,44 @@
+.third-header {
+  background-color: yellowgreen;
+  text-align: center;
+  font-size: 30px;
+  margin: 0px;
+}
 
+.new-food-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgreen;
+}
+
+.indispensable {
+  background-color: red;
+  font-size: 12px;
+  color: white;
+  margin-left: 10px;
+}
+
+.new-food-image {
+  margin: 15px;
+  padding: 15px;
+}
+
+.new-food-name, .new-food-protein, .new-food-fat, .new-food-carbo, .new-food-kcal {
+  margin: 30px 50px;
+  padding: 15px 20px;
+}
+
+.new-food-category {
+  margin: 30px 50px;
+  padding: 15px 55px ;
+}
+
+.new-register {
+  margin: 30px 50px;
+  padding: 15px 55px 15px 60px;
+}
+
+.text {
+  font-weight: bolder;
+}

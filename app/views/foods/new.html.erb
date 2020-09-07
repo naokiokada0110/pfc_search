@@ -1,13 +1,61 @@
-<h1>食材新規登録</h1>
-<%= form_with model:@food, url:foods_path, local: true do |f| %>
-  <%= f.file_field :image %>
-  <%= f.text_area :name, placeholder:"食材名（必須）" %>
-  <%= f.text_area :protein, placeholder:"タンパク質（必須）" %>
-  <%= f.text_area :fat, placeholder:"脂質（必須）" %>
-  <%= f.text_area :carbo, placeholder:"炭水化物（必須）" %>
-  <%= f.text_area :kcal, placeholder:"カロリー" %>
-  <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "---"}) %>
+<h1 class='third-header'>食材新規登録</h1>
+<div class='new-food-info'>
+  <%= form_with model:@food, url:foods_path, local: true do |f| %>
+    <div class='new-food-image'>
+      <div class='text'>
+      食材画像
+      <span class='indispensable'>必須</span>
+      </div>
+      <%= f.file_field :image %>
+    </div>
+    <div class='new-food-name'>
+      <div class='text'>
+      食材の名前
+      <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :name, placeholder:"食材名（必須）" %>
+    </div>
+    <div class='new-food-protein'>
+      <div class='text'>
+      タンパク質の量
+      <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :protein, placeholder:"タンパク質（必須）" %>
+    </div>
+    <div class='new-food-fat'>
+      <div class='text'>
+      脂質の量
+      <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :fat, placeholder:"脂質（必須）" %>
+    </div>
+    <div class='new-food-carbo'>
+      <div class='text'>
+      炭水化物の量
+      <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :carbo, placeholder:"炭水化物（必須）" %>
+    </div>
+    <div class='new-food-kcal'>
+      <div class='text'>
+      カロリー数
+      <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :kcal, placeholder:"カロリー" %>
+    </div>
+    <div class='new-food-category'>
+      <div class='text'>
+      カテゴリー
+      <span class='indispensable'>必須</span>
+      </div>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+    <div class='new-register'>
+      <%= f.submit "登録する"%>
+    </div>
+  <% end %>
+</div>
 
-  <%= f.submit "登録する"%>
-<% end %>
-<%= link_to "トップページへ戻る", root_path %>
+<footer>
+  <%= link_to "トップページへ戻る", root_path %>
+</footer>

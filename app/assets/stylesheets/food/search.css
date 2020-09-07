@@ -1,6 +1,14 @@
+.second-header {
+  background-color: yellowgreen;
+  text-align: center;
+  font-size: 30px;
+  margin: 0px;
+}
+
 .sub-title {
   text-align: center;
   font-size: 30px;
+  margin: 0px;
 }
 
 .mini-title {
@@ -47,5 +55,9 @@
 }
 
 .food-kcal-content {
+  text-align: right;
+}
+
+footer {
   text-align: right;
 }
