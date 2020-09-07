@@ -31,7 +31,7 @@ Things you may want to cover:
 | protein     | integer | null: false |
 | fat         | integer | null: false |
 | carbo       | integer | null: false |
-| kcal        | integer |             |
+| kcal        | integer | null: false |
 | category_id | integer | null: false |
 
 ### Association
